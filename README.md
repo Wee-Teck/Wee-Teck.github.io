@@ -1,3 +1,2 @@
 Author: Lee Wee Teck
-Class: 2B_21
-Date: 12/5/22
+Personal repository to store and document my findings in Independent Studies.

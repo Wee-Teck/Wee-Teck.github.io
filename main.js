@@ -1,38 +1,46 @@
-class DigitalClock {
-  constructor(element) {
-    this.element = element;
-  }
+import { EquationSolver } from "./EquationSolver.js";
+import {Result } from "./Result.js";
 
-  start() {
-    this.update();
+window.onload = function () {
+  new EquationSolverFactory();
+};
 
-    setInterval(() => {
-      this.update();
-    }, 500);
-  }
+function EquationSolverFactory() {
+  this.input = document.getElementById(EquationSolverFactory.inputId);
+  this.output = document.getElementById(EquationSolverFactory.outputId);
+  this.submitBtn = document.getElementById(EquationSolverFactory.submitBtnId);
 
-  update() {
-    const parts = this.getTimeParts();
-    const minuteFormatted = parts.minute.toString().padStart(2, "0");
-    const timeFormatted = `${parts.hour}:${minuteFormatted}`;
-    const amPm = parts.isAm ? "AM" : "PM";
+  this.input.placeholder = "3 ^ (4 - 2) + 1";
 
-    this.element.querySelector(".clock-time").textContent = timeFormatted;
-    this.element.querySelector(".clock-ampm").textContent = amPm;
-  }
-
-  getTimeParts() {
-    const now = new Date();
-
-    return {
-      hour: now.getHours() % 12 || 12,
-      minute: now.getMinutes(),
-      isAm: now.getHours() < 12,
-    };
-  }
+  var $this = this;
+  this.submitBtn.addEventListener("click", function (e) {
+    $this.submitBtnDidClick(e);
+  });
 }
 
-const clockElement = document.querySelector(".clock");
-const clockObject = new DigitalClock(clockElement);
+EquationSolverFactory.prototype.submitBtnDidClick = function (e) {
+  var eqn = this.input.value.replace(/\s/g, "");
+  var $this = this;
+  var eqs = new EquationSolver(eqn);
+  console.log(eqs);
+  var result = this.createOutput(eqn, eqs.result, eqs.error);
+  this.output.insertBefore(result.html, this.output.firstChild);
+  result.html.addEventListener("click", function (e) {
+    $this.resultDidClick(result);
+  });
+  if (this.output.children.length > 10) {
+    this.output.removeChild(this.output.lastChild);
+  }
+};
 
-clockObject.start();
+EquationSolverFactory.prototype.resultDidClick = function (result) {
+  this.input.value = result.input;
+};
+
+EquationSolverFactory.prototype.createOutput = function (eqn, soln, isError) {
+  return new Result(eqn, soln, isError);
+};
+
+EquationSolverFactory.inputId = "equation_input";
+EquationSolverFactory.outputId = "equation_output";
+EquationSolverFactory.submitBtnId = "equation_submit";

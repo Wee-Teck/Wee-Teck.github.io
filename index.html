@@ -1,23 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Concert+One&family=Quicksand&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./main.css" />
-    <title>Digital Clock</title>
-  </head>
-  <body>
-    <div class="clock">
-      <span class="clock-time"></span>
-      <span class="clock-ampm"></span>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Quicksand&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./equationsolver.css" />
+  <title>Independent Studies</title>
+</head>
+
+<body>
+  <center>
+    <div id="additional_disclaimer">
+      <p>
+        I will be adding additional functions such as decimal points (.)
+      </p>
     </div>
-    <script src="./main.js"></script>
-  </body>
+    <div id='disclaimer'>
+      <p> Supported Functions: <br />Plus (+), Minus or Negative (-), <br />Multiply (*), Divide (/), Brackets (()),
+        <br />Power(^)
+      </p>
+    </div>
+    <div id='equation_solver'>
+      <input id='equation_input' class='input'></input> <button id='equation_submit'>Submit</button>
+      <div id='equation_output'>
+      </div>
+    </div>
+  </center>
+  <script type="module" src="./main.js"></script>
+</body>
+
 </html>
