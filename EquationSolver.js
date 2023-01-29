@@ -35,24 +35,25 @@ export class EquationSolver {
   setResult(result) {
     this.result = result;
   }
+
   /**
    * This function converts an infix notation to postfix notation
    * @param {string} infix - the infix notation to convert
    * @return {string} postfix - the postfix notation
    */
   infixToPostfix(infix) {
+    // checks if input is empty or does not match the following characters: +, -, *, /, ^, (, )
     if (!/^[\d+\-*/^()\s]*$/.test(infix) || infix.trim() == "") {
       this.setResult(EquationSolver.ERROR_INVALID_STRING());
     } else {
       // remove whitespaces from the infix notation
       infix = infix.replace(/\s/g, "");
       // define the precedence of operators
-      const precedence = { "*": 3, "/": 3, "+": 2, "-": 2, "^": 4 };
+      const precedence = { "^": 4, "*": 3, "/": 3, "+": 2, "-": 2 };
       // create a stack to hold operators
       const stack = new Stack();
       // initialize the postfix notation as an empty string
       let postfix = "";
-      let prev = "";
       // initialize a variable to keep track of the number of open parenthesis
       let openParenthesis = 0;
       // iterate through the infix notation
@@ -61,8 +62,6 @@ export class EquationSolver {
         // if the character is a number, add it to the postfix notation
         if (!isNaN(char)) {
           postfix += char;
-          if (!isNaN(prev)) postfix;
-          prev = char;
           // if the character is an operator
         } else if (char in precedence) {
           // while the stack is not empty and the current operator has lower or equal precedence to the operator at the top of the stack
@@ -77,14 +76,12 @@ export class EquationSolver {
           postfix += " ";
           // push the current operator onto the stack
           stack.push(char);
-          prev = char;
           // if the character is an open parenthesis
         } else if (char === "(") {
           // increment the openParenthesis counter
           openParenthesis++;
           // push the parenthesis onto the stack
           stack.push(char);
-          prev = char;
           // if the character is a close parenthesis
         } else if (char === ")") {
           // decrement the openParenthesis counter
@@ -100,7 +97,6 @@ export class EquationSolver {
           }
           //pop the open parenthesis
           stack.pop();
-          prev = char;
           // if the character is not a number, operator or parenthesis
         } else {
           // throw an error with the invalid character
@@ -121,6 +117,7 @@ export class EquationSolver {
       return postfix;
     }
   }
+
   /**
    * This function evaluates the postfix notation and returns the result
    * @param {string} postfix - the postfix notation to evaluate
