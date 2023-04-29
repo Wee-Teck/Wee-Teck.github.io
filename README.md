@@ -10,7 +10,7 @@ This repository documents my journey as I explore the latest advancements in web
 
 In my first independent study project, I explored the concepts of data structures and algorithms, specifically the stack and linked list data structures, and the shunting yard algorithm. Through this project, I gained a deeper understanding of how to organize and manipulate data efficiently in programming. And have built a simple [Equation Solver](#equation-solver) which solves mathematical expressions.
 
-### IS2: Advanced Data Structures and Algorithms
+### IS2: Further Exploring Data Structures and Algorithms
 
 My current project involves a deeper exploration of data structures and algorithms, including tries, suffix trees, and the edit distance algorithm. I'm excited to see where this project takes me, as I'll be trying my hand at creating a Spell Checker, similar to Google's "Did you mean" functionality.
 
