@@ -29,5 +29,9 @@ My Equation Solver is a simple calculator that evaluates mathematical expression
 
 My latest project is a spell checker that aims to detect errors in spelling. The spell checker will help users identify and correct spelling errors, similar to Google's "Did you mean" functionality. I'm still in the process of developing and testing the spell checker, but I'm excited to share updates with you soon!
 
+## Future Plans
+
+Eventually, my goal is to create a comprehensive website that provides users with access to a range of tools and modules, including the Equation Solver and Spell Checker. To achieve this, I plan to develop a dashboard where users can explore and utilize these modules.
+
 </br>
 Thank you for visiting my repository!
