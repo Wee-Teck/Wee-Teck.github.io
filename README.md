@@ -1,5 +1,8 @@
 # Independent Studies Repository
 
+> [!WARNING]
+> This repository is currently out of commission as I am building my portfolio website and the following projects can be found in their corressponding repositories
+
 Welcome to my personal repository for Independent Studies! 
 
 ## About this repository
@@ -8,11 +11,11 @@ This repository documents my journey as I explore the latest advancements in web
 
 ### IS1: Introduction to Data Structures and Algorithms
 
-In my first independent study project, I explored the concepts of data structures and algorithms, specifically the stack and linked list data structures, and the shunting yard algorithm. Through this project, I gained a deeper understanding of how to organize and manipulate data efficiently in programming. And have built a simple [Equation Solver](#equation-solver) which solves mathematical expressions.
+In my first independent study project, I explored the concepts of data structures and algorithms, specifically the stack and linked list data structures, and the shunting yard algorithm. Through this project, I gained a deeper understanding of how to organize and manipulate data efficiently in programming. And have built a simple [Equation Solver](https://github.com/Wee-Teck/Equation-Solver) which solves mathematical expressions.
 
 ### IS2: Further Exploring Data Structures and Algorithms
 
-My current project involves a deeper exploration of data structures and algorithms, including tries, suffix trees, and the edit distance algorithm. I'm excited to see where this project takes me, as I'll be trying my hand at creating a Spell Checker, similar to Google's "Did you mean" functionality.
+My current project involves a deeper exploration of data structures and algorithms, including tries, suffix trees, and the edit distance algorithm. I'm excited to see where this project takes me, as I'll be trying my hand at creating a [Spell Checker](https://github.com/Wee-Teck/Spell-Checker), similar to Google's "Did you mean" functionality.
 
 ## Equation Solver
 
